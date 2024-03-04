@@ -1,1 +1,28 @@
-<p>post-item works!</p>
+<mat-card>
+    <mat-card-content>
+        <div class="container">
+            <div class="author">
+                {{post.author}}
+            </div>
+            <div class="stat">
+                <mat-icon aria-hidden="false" fontIcon="favorite"></mat-icon>
+                <p>{{post.likes}}</p>
+            </div>
+            <div class="stat">
+                <mat-icon aria-hidden="false" fontIcon="thumb_up"></mat-icon>
+                <p>{{post.popularity | percent}}</p>
+            </div>
+            <div class="stat">
+                <mat-icon aria-hidden="false" fontIcon="visibility"></mat-icon>
+                <p>{{post.reads}}</p>
+            </div>
+            <div class="tags">
+                <mat-chip-listbox disabled="true" class="mat-mdc-chip-set-stacked">
+                    <mat-chip-option class="tag" *ngFor="let tag of post.tags">
+                        {{tag}}
+                    </mat-chip-option>
+                </mat-chip-listbox>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

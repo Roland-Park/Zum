@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IPost } from 'src/app/models/post';
 
 @Component({
-  selector: 'app-post-item',
+  selector: 'post-item',
   templateUrl: './post-item.component.html',
   styleUrls: ['./post-item.component.css']
 })
 export class PostItemComponent {
-
+  @Input() post: IPost;
 }

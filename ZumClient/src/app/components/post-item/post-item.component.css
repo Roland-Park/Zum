@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.author{
+    flex-grow: 2;
+}
+
+.stat{
+    flex-grow: 1;
+}
+
+.tags{
+    max-width: 7em;
+    min-width: 7em;
+}

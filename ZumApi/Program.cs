@@ -16,6 +16,14 @@ builder.Services.AddHttpClient<IPostsRequestService, PostsRequestService>(client
     client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("ExternalPostsApi")); 
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "CorsPolicy",
+        x => x.WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,6 +31,8 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCors("CorsPolicy");
 
 app.MapControllers();
 
