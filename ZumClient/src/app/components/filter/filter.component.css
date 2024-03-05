@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+}
+
+.form, button{
+    margin-right:1%;
+    margin-top:3%;
+}
+

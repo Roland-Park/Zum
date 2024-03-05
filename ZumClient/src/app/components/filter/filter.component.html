@@ -1,0 +1,35 @@
+
+<div class="container">
+    <div class="form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Filter tags</mat-label>
+            <input required matInput placeholder="Ex. Tech" [(ngModel)]="tagCsv">
+        </mat-form-field>
+    </div>
+    <div class="form">
+        <mat-form-field>
+            <mat-label>Sort by</mat-label>
+            <select matNativeControl [(ngModel)]="sortBy">
+              <option value="id">Id</option>
+              <option value="reads">Reads</option>
+              <option value="likes">Likes</option>
+              <option value="popularity">Popularity</option>
+            </select>
+          </mat-form-field> 
+    </div>
+    <div class="form">
+        <mat-form-field>
+            <mat-label>Sort direction</mat-label>
+            <select matNativeControl [(ngModel)]="direction">
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
+            </select>
+          </mat-form-field> 
+    </div>
+
+    <button class="button" mat-icon-button color="accent" (click)="filter()">
+        <mat-icon>search</mat-icon>
+      </button>
+</div>
+
+  
