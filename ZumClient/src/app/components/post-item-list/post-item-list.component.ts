@@ -19,4 +19,10 @@ export class PostItemListComponent implements OnInit {
     this.posts$ = this.postService.posts$;
     this.postService.loadPosts("tech");
   }
+
+  postsExist(posts: IPost[] | null): boolean{
+    if(!posts) return false;
+
+    return posts.length > 0;
+  }
 }
